@@ -1,0 +1,46 @@
+---
+## Set to yes to disable RPC and run plugins from local plugin source
+solo: no
+
+## Set to yes to create lots of logs
+debug: no
+
+## The outlyer api key
+api-key: {{ outlyer_api_key }}
+
+### The outlyer server endpoint
+server: wss://agent.outlyer.io
+
+##  set tags to a comma separated list of tags applied to this agent
+#tags:
+
+## Set if you would like a custom name for this agent. Default is hostname
+#name:
+
+
+---
+agent:
+    # account Agent key (default: None, this is a required parameter)
+    key: {{ outlyer_api_key }}
+    # enable debug logging (default: false)
+    debug: False
+    # override the Agent hostname (default: auto-detected)
+    ## Set if you would like a custom name for this agent. Default is hostname
+    #hostname:
+    ##  set the host labels applied to this agent
+    #labels:
+    # Choose which labels are going to be added to metric dimensions
+    #matric_labels:
+    # Locations of user plugins (default: /etc/outlyer/config.d)
+    # config_dir: "/etc/outlyer/config.d"
+
+    # Location of libjvm.so  for jmx plugins (default: False)
+    # libjvm_path: '/usr/lib/jvm/current/libjvm.so'
+
+    # location for Agent server connection.
+    # This should not need to be changed (default: exchange.outlyer.com)
+    ### The outlyer server endpoint
+    #server: 
+
+    # solo mode disables central configuration
+    #solo: 
