@@ -3,9 +3,7 @@
 
 [outlyer]
 name=Outlyer Repository
-baseurl=https://packages.outlyer.com/packages/stable/rpm/$basearch/
+baseurl=http://packages.outlyer.com/packages/stable/rpm/$basearch/
 enabled=1
 gpgcheck=1
-gpgkey=https://packages.outlyer.com/outlyer-pubkey.gpg
-sslverify=true
-
+gpgkey=http://packages.outlyer.com/outlyer-pubkey.gpg
