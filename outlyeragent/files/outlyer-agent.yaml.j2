@@ -1,0 +1,33 @@
+# vim: ft=jinja
+# This file handles the merging of pillar data with the data from defaults
+
+{# Start with  defaults from defaults.yml #}
+{% from "outlyeragent/map.jinja" import outlyeragent with context %}
+---
+agent:
+    # account Agent key (default: None, this is a required parameter)
+    key: {{ outlyeragent.agent_key }}
+
+    # enable debug logging (default: false)
+    debug: {{ outlyeragent.debug }}
+
+    # override the Agent hostname (default: auto-detected)
+    ## Set if you would like a custom name for this agent. Default is hostname
+    # hostname:
+
+    ##  set the host labels applied to this agent
+    # labels:
+
+    # Choose which labels are going to be added to metric dimensions
+    # metric_labels:
+
+    # Locations of user plugins (default: /etc/outlyer/config.d)
+    # config_dir: "/etc/outlyer/config.d"
+
+    # location for Agent server connection.
+    # This should not need to be changed (default: exchange.outlyer.com)
+    ### The outlyer server endpoint
+    # server: 
+
+    # solo mode disables central configuration
+    solo: {{ outlyeragent.solo }}

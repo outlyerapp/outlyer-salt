@@ -1,0 +1,8 @@
+# vim: ft=yaml
+# Defaults for outlyer
+
+outlyeragent:
+  enabled: true
+  agent_key: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+  debug: false
+  solo: false
