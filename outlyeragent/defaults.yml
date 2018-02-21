@@ -6,3 +6,4 @@ outlyeragent:
   agent_key: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
   debug: false
   solo: false
+  docker: false

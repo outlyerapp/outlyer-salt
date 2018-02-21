@@ -12,22 +12,53 @@ agent:
     debug: {{ outlyeragent.debug }}
 
     # override the Agent hostname (default: auto-detected)
-    ## Set if you would like a custom name for this agent. Default is hostname
-    # hostname:
+    # hostname: 'my_server'
 
-    ##  set the host labels applied to this agent
+    # set host labels (default: None)
     # labels:
+    #    env: prod
+    #    region: US
 
-    # Choose which labels are going to be added to metric dimensions
+    # choose which labels are going to be added to metric dimensions
     # metric_labels:
+    #   - region
 
-    # Locations of user plugins (default: /etc/outlyer/config.d)
-    # config_dir: "/etc/outlyer/config.d"
+    # location for the agent to store its files.
+    # The agent needs to have write access to this folder (default: /etc/outlyer)
+    # home_dir: '/etc/outlyer'
+
+    # location for check config files (default: /etc/outlyer/conf.d)
+    # config_dir: '/etc/outlyer/conf.d'
+
+    # location for check plugin files (default: /etc/outlyer/plugins)
+    # plugin_dir: '/etc/outlyer/plugins'
 
     # location for Agent server connection.
-    # This should not need to be changed (default: exchange.outlyer.com)
-    ### The outlyer server endpoint
-    # server: 
+    # This should not need to be changed (default: agent.outlyer.com)
+    # server: 'agent.outlyer.com'
 
     # solo mode disables central configuration
     solo: {{ outlyeragent.solo }}
+
+    # enable the docker check (default: false)
+    docker: {{ outlyeragent.docker }}
+
+    # for the docker check, set where it will find the host files needed
+    # to read containers performance data. By default, it assumes that the
+    # agent is running inside a docker container and the host files are
+    # mounted under '/host'. If you are running the agent directly on a host
+    # change that to ''/'. Please see documentation for more info
+    # rootfs: '/'
+
+    # Enable Agent Statistics to be collected and sent (default: false)
+    # This will provide additional metrics to show how many metrics the agent is
+    # collecting, method call times for some methods and other statistics about
+    # the agent when its enabled
+    # enable_stats: false
+
+    # port used for the agent REST api (default: 2014)
+    # set zero (0) to disable
+    # api_port: 2014
+
+    # ip used for the agent REST api (default: '127.0.0.1')
+    # api_host: '127.0.0.1'
