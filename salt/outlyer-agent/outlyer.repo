@@ -1,9 +1,0 @@
-# This fileis managed by Salt
-# Do NOT modify this file by hand.
-
-[outlyer]
-name=Outlyer Repository
-baseurl=http://packages.outlyer.com/packages/stable/rpm/$basearch/
-enabled=1
-gpgcheck=1
-gpgkey=http://packages.outlyer.com/outlyer-pubkey.gpg
