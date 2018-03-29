@@ -7,10 +7,10 @@
 
 outlyer_repo:
   pkgrepo.managed:
-    - name: deb  http://packages.outlyer.com/debian stable main
+    - name: deb  https://packages.outlyer.com/debian unstable main
     - humanname: outlyer
     - file: /etc/apt/sources.list.d/outlyer.list
-    # - key_url: http://packages.outlyer.com/outlyer-pubkey.gpg
+    # - key_url: https://packages.outlyer.com/outlyer-pubkey.gpg
     - keyid: ACB6D967
     - keyserver: keyserver.ubuntu.com
     - gpgcheck: 1
@@ -20,12 +20,12 @@ outlyer_repo:
 outlyer_repo:
   file.managed:
     - name: /etc/pki/rpm-gpg/RPM-GPG-KEY-outlyer
-    - source: http://packages.outlyer.com/outlyer-pubkey.gpg
+    - source: https://packages.outlyer.com/outlyer-pubkey.gpg
     - source_hash: md5=cf5f8458bb68026eb1e7169e6aa001f6
   pkgrepo.managed:
     - name: outlyer
     - humanname: outlyer
-    - baseurl: http://packages.outlyer.com/stable/el{{grains['osmajorrelease']}}/$basearch/
+    - baseurl: https://packages.outlyer.com/stable/el{{grains['osmajorrelease']}}/$basearch/
     - gpgcheck: 1
     - gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-outlyer
 
