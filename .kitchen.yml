@@ -34,13 +34,6 @@ platforms:
   - name: debian-9
     driver:
       box: debian-9
-  - name: windows-2012r2
-    driver:
-      image_id: ami-0a84b46f
-    transport:
-      name: winrm
-      username: administrator
-      ssh_key: ~/.ssh/kitchen-test.pem
 
 suites:
   - name: default
