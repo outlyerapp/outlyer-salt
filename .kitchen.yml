@@ -1,9 +1,9 @@
-# vim: ft=yaml
 ---
 driver:
-  name: vagrant
-  customize: 
-    memory: 1024
+  name: ec2
+  region: us-east-2
+  boot_timeout: 1200
+  gui: false
 
 provisioner:
   name: salt_solo
@@ -14,10 +14,33 @@ provisioner:
         - outlyeragent
 
 platforms:
-  - name: ubuntu-14.04
-  - name: ubuntu-16.04
-  - name: centos-6.6
-  - name: centos-7.2
+  - name: ubuntu-1404
+    driver:
+      box: ubuntu-14.04
+      image_id: ami-b2132ed7
+  - name: ubuntu-1604
+    driver:
+      box: ubuntu-16.04
+      image_id: ami-916f59f4
+  - name: centos-6
+    driver:
+      box: centos-6
+  - name: centos-7
+    driver:
+      box: centos-7
+  - name: debian-8
+    driver:
+      box: debian-8
+  - name: debian-9
+    driver:
+      box: debian-9
+  - name: windows-2012r2
+    driver:
+      image_id: ami-0a84b46f
+    transport:
+      name: winrm
+      username: administrator
+      ssh_key: ~/.ssh/kitchen-test.pem
 
 suites:
   - name: default
@@ -29,4 +52,17 @@ suites:
           base:
             "*":
               - outlyeragent
+    verifier:
+      inspec_tests:
+        - test
+    attributes:
+      outlyer:
+        agent:
+          agent_key: XXX-XXX-XXX-XXX-XXX
+          labels:
+            role: test
+          package:
+            version: 0.0.67-1
 
+verifier:
+  name: inspec
