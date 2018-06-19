@@ -7,6 +7,3 @@ outlyeragent:
   debug: false
   solo: false
   docker: false
-  circusd_endpoint_port: 5555
-  circusd_pubsub_endpoint_port: 5556
-  circusd_stats_endpoint_port: 5557
